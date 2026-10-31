@@ -27,7 +27,6 @@ public class SearchTest
         switchTo().window(1);
         sleep(3000);
 
-        //System.out.println($$(".t-menu__list li").size());
 
         new WelcomePage()
                 .clickPrice() // Переход на страницу стоимости
