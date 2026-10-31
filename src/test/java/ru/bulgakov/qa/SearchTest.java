@@ -37,6 +37,6 @@ public class SearchTest
         switchTo().window(2);
         sleep(5000);
         new LavaPage()
-                .checkPrice("47"); //Проверка что в цене есть 47
+                .checkPrice("₽ 47 000.00"); //Проверка что в цене есть 47
     }
 }

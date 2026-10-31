@@ -4,8 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LavaPage
@@ -16,8 +15,9 @@ public class LavaPage
     public LavaPage checkPrice(String expectedPrice)
     {
         priceTitle
-                .shouldBe(visible, Duration.ofSeconds(15))
-                .shouldHave(text(expectedPrice));
+            .shouldBe(visible, Duration.ofSeconds(15))
+            .shouldHave(exactText(expectedPrice));
+
         return this;
     }
 }
