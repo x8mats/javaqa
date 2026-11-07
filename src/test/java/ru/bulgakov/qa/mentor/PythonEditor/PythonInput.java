@@ -1,4 +1,4 @@
-package PythonEditor;
+package ru.bulgakov.qa.mentor.PythonEditor;
 
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;

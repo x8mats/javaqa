@@ -1,12 +1,12 @@
-package ru.bulgakov.qa;
+package ru.bulgakov.qa.mentor;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.LavaPage;
-import pages.WelcomePage;
-import pages.YandexSearchPage;
+import ru.bulgakov.qa.mentor.pages.LavaPage;
+import ru.bulgakov.qa.mentor.pages.WelcomePage;
+import ru.bulgakov.qa.mentor.pages.YandexSearchPage;
 
 import static com.codeborne.selenide.Selenide.*;
 

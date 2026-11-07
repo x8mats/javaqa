@@ -1,9 +1,9 @@
-package dz1;
+package ru.bulgakov.qa.mentor.dz1;
 
-import PythonEditor.PythonInput;
+import ru.bulgakov.qa.mentor.PythonEditor.PythonInput;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
-import pages.YandexSearchPage;
+import ru.bulgakov.qa.mentor.pages.YandexSearchPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
