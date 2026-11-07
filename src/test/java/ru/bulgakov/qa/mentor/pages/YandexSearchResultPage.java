@@ -1,4 +1,4 @@
-package pages;
+package ru.bulgakov.qa.mentor.pages;
 
 
 import static com.codeborne.selenide.Selectors.byText;
