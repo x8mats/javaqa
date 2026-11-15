@@ -1,6 +1,7 @@
 package ru.bulgakov.qa.webshop.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.value;
@@ -21,19 +22,21 @@ public class WsCartPage
         this.itemPrice = itemPrice;
     }
 
-
+    @Step("Проверка имени продукта {itemName}")
     public WsCartPage verifyProductName()
     {
         findProductName.shouldHave(text(itemName));
         return this;
     }
 
+    @Step("Проверка количества товаров: {itemQuantity}")
     public WsCartPage verifyItemQuantity(String itemQuantity)
     {
         findItemQuantity.shouldHave(value(itemQuantity));
         return this;
     }
 
+    @Step("Проверка конечной цены")
     public WsCartPage verifyTotalPrice(String itemQuantity)
     {
         float price = Float.parseFloat(itemPrice);

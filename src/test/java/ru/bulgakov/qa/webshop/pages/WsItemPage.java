@@ -2,6 +2,7 @@ package ru.bulgakov.qa.webshop.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -22,13 +23,14 @@ public class WsItemPage
     private final SelenideElement findCartQty = $("span.cart-qty");
     private final SelenideElement findCartLink = $("a.ico-cart");
 
-
+    @Step("Выбор cheap Computer")
     public WsItemPage selectCheapComputer()
     {
         findCheapComputer.get(0).click();
         return this;
     }
 
+    @Step("Запоминание данных товара (название/цена)")
     public WsItemPage rememberItemData()
     {
         itemName = $("[itemprop=name]").getText();
@@ -36,36 +38,42 @@ public class WsItemPage
         return this;
     }
 
+    @Step("Выбор опций в селекторе спецификаций компьютера с группой: {groupIndex} и опцией: {optionIndex}")
     public WsItemPage selectOption(int groupIndex, int optionIndex)
     {
         optionGroups.get(groupIndex).$$(optionInputSelector).get(optionIndex).click();
         return this;
     }
 
+    @Step("Установка значения количества = {itemQuantity}")
     public WsItemPage enterQty(String itemQuantity)
     {
         findQtyField.setValue(itemQuantity);
         return this;
     }
 
+    @Step("Добавление в корзину")
     public WsItemPage addToCart()
     {
         findAddToCartButton.click();
         return this;
     }
 
+    @Step("Проверка уведомления об успешности добавления в корзину")
     public WsItemPage checkNotifSuccess()
     {
         findNotifBar.shouldBe(visible);
         return this;
     }
 
+    @Step("Проверка количества товара в корзине = {itemQuantity}")
     public WsItemPage checkCartQty(String itemQuantity)
     {
         findCartQty.shouldHave(text( "(" + itemQuantity + ")" ));
         return this;
     }
 
+    @Step("Переход в корзину")
     public WsCartPage goToCart()
     {
         findCartLink.click();

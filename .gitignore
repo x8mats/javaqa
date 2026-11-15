@@ -49,3 +49,4 @@ replay_pid*
 ### Локальные настройки и секреты ###
 .env
 local.properties
+allure-single/index.html
